@@ -1,0 +1,26 @@
+meta {
+  name: Airtable API URL
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://api.airtable.com/v0/appuYbPHjZGoIMUna/Table%201?maxRecords=3&view=Grid%20view
+  body: none
+  auth: bearer
+}
+
+query {
+  maxRecords: 3
+  view: Grid%20view
+}
+
+auth:bearer {
+  token: pataLVU90Nitd5Zlf.cac2198f3be43e7dfa6b0cff6ef0fc36edf1e96195e9fd931963957f48bf47c8
+}
+
+vars:pre-request {
+  url: https://api.airtable.com/v0/
+  baseId: appuYbPHjZGoIMUna
+  tableId: Table%201/recTSDv9PYaiQWfwE
+}
