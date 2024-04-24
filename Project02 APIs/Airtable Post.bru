@@ -1,0 +1,33 @@
+meta {
+  name: Airtable Post
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://api.airtable.com/v0/appuYbPHjZGoIMUna/Table%201
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: pataLVU90Nitd5Zlf.cac2198f3be43e7dfa6b0cff6ef0fc36edf1e96195e9fd931963957f48bf47c8
+}
+
+body:json {
+      {
+        "fields": {
+          "recipeId": "640352",
+          "ingredients": "apple, cranberry",
+          "recipeName": "Cranberry Apple Crisps",
+          "url": "https://api.spoonacular.com/recipes/640352/information?apiKey=b662b7888b3642d2ad673e21b66ea7cd"
+        }
+      }
+    
+}
+
+vars:pre-request {
+  url: https://api.airtable.com/v0/
+  baseId: appuYbPHjZGoIMUna
+  tableId: Table%201/recTSDv9PYaiQWfwE
+}

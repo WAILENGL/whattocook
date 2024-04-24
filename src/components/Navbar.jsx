@@ -1,15 +1,19 @@
-import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+export default function NavBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-      <Navbar.Brand href="#home">What to Cook Today?</Navbar.Brand>
-      <Nav className="ml-auto"> 
-        <Nav.Link href="/favourites">Favourites</Nav.Link>
-      </Nav>
-    </Navbar>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <Link to="/" className="navbar-brand">
+        What to Cook Today?
+      </Link>
+      <ul className="navbar-nav justify-content-end">
+        <li className="nav-item">
+          <Link to="/favourites" className="nav-link">
+            Favourites
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
-};
-
-export default NavBar;
+}

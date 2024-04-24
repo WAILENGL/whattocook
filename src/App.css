@@ -8,3 +8,13 @@
 h1 {
   text-align: center;
 }
+
+.navbar { 
+  background-color: '#333';
+  padding: '1rem'; 
+  position: 'fixed';
+  top: 0; 
+  width: '100%';
+
+
+}
