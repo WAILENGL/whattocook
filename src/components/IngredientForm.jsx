@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function IngredientForm() {
+export default function IngredientForm({ setRecipes }) {
 	const [ingredient, setIngredient] = useState('');
 	const [ingredientList, setIngredientList] = useState([]);
+	const goToResults = useNavigate(); 
 
-	// this allows user to input ingredients from kitchen one by one
+	// this allows user to input ingredients from kitchen one by one, look into local storage to keep ingredient list
 	function handleSubmit(event) {
 		event.preventDefault();
 		setIngredientList([...ingredientList, ingredient]);
@@ -23,13 +25,14 @@ export default function IngredientForm() {
 		let ingredientString = ingredientList.join(',+');
 		try {
 			const response = await fetch(
-				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b662b7888b3642d2ad673e21b66ea7cd&ingredients=${ingredientString}&number=10`
+				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b662b7888b3642d2ad673e21b66ea7cd&ingredients=${ingredientString}&number=12`
 			);
 			if (!response.ok) {
 				throw new Error(`Error: ${response.status}`);
 			}
 			const data = await response.json();
-			console.log(data);
+			setRecipes(data);
+			goToResults('/Recipelist') // Navigate to /Recipelist after fetching recipes
 		} catch (error) {
 			console.error('There was a problem with the search:', error);
 		}
