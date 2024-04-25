@@ -1,0 +1,17 @@
+meta {
+  name: Ingredient Details 2
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://api.spoonacular.com/recipes/findByIngredients?apiKey=212906df28ff4c0dbb3e9b2dd915adcd&ingredients=apples,+flour,+sugar&number=2
+  body: none
+  auth: none
+}
+
+query {
+  apiKey: 212906df28ff4c0dbb3e9b2dd915adcd
+  ingredients: apples,+flour,+sugar
+  number: 2
+}

@@ -25,7 +25,7 @@ export default function IngredientForm({ setRecipes }) {
 		let ingredientString = ingredientList.join(',+');
 		try {
 			const response = await fetch(
-				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b662b7888b3642d2ad673e21b66ea7cd&ingredients=${ingredientString}&number=12`
+				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=212906df28ff4c0dbb3e9b2dd915adcd&ingredients=${ingredientString}&number=3`
 			);
 			if (!response.ok) {
 				throw new Error(`Error: ${response.status}`);
@@ -41,7 +41,7 @@ export default function IngredientForm({ setRecipes }) {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<input
-					type="text"
+					type="search"
 					value={ingredient}
 					onChange={(event) => setIngredient(event.target.value)}
 				/>
