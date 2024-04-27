@@ -110,8 +110,7 @@ export default function IngredientForm({ setRecipes }) {
 							<span
 								className="mr-2"
 								style={{
-									fontSize: 19,
-									width: `${Math.min(300, ingredient.length * 10)}px`, // adjust width based on ingredient length
+									fontSize: 20,
 									display: 'inline-block',
 									whiteSpace: 'nowrap', // prevent wrapping of long ingredients
 									fontWeight: 'bold',
