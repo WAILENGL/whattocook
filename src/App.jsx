@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-/* import './App.css' */
 import { Route, Routes } from "react-router-dom";
 import RecipeList from './components/Recipelist';
 import IngredientForm from './components/IngredientForm';

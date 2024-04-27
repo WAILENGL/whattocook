@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 export default function RecipeDetails({ favourites, setFavourites }) {
 	const [recipe, setRecipe] = useState(null);
 	const [isFavourite, setIsFavourite] = useState(false);
+	const [airtableRecordId, setAirtableRecordId] = useState(null);
 	const { id } = useParams();
 
 	useEffect(() => {
@@ -12,7 +13,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		async function fetchRecipeDetails() {
 			try {
 				const response = await fetch(
-					`https://api.spoonacular.com/recipes/${id}/information?apiKey=d045314fa27c447d95a43679d38cc87a`
+					`https://api.spoonacular.com/recipes/${id}/information?apiKey=7134c70d9ec34d258b3d03fe6708ccbb`
 				);
 				if (!response.ok) {
 					throw new Error(`Error: ${response.status}`);
@@ -25,6 +26,38 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		}
 		fetchRecipeDetails();
 	}, [id]);
+
+	// Fetch Airtable data to get recipe's Airtable id
+	useEffect(() => {
+
+		async function fetchAirtableData() {
+		  try {
+			const response = await fetch(
+			  'https://api.airtable.com/v0/appuYbPHjZGoIMUna/Table%201',
+			  {
+				headers: {
+				  Authorization: 'Bearer pataLVU90Nitd5Zlf.cac2198f3be43e7dfa6b0cff6ef0fc36edf1e96195e9fd931963957f48bf47c8',
+				},
+			  }
+			);
+			if (!response.ok) {
+			  throw new Error(`Error: ${response.status}`);
+			}
+			const data = await response.json();
+			const airtableRecipes = data.records;
+			const isFavouriteRecipe = airtableRecipes.some((recipe) => recipe.fields.recipeid === id);
+			setIsFavourite(isFavouriteRecipe);
+			if (isFavouriteRecipe) {
+				const airtableRecord = airtableRecipes.find((recipe) => recipe.fields.recipeid === id);
+				setAirtableRecordId(airtableRecord.id);
+			  }
+		  } catch (error) {
+			console.log(error.message);
+		  }
+		}
+		fetchAirtableData();
+	  }, [id]);
+
 
 	async function handleFavouriteClick() {
 		setIsFavourite(!isFavourite);
@@ -43,8 +76,10 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 			);
 			setFavourites(updatedFavourites);
 			// Remove recipe details from Airtable
-			await removeRecipe(recipe.airtableRecordId);
-		}
+			if (airtableRecordId) {
+				await removeRecipe(airtableRecordId);
+			  }
+				}
 	}
 
 	async function addRecipe(recipe) {
@@ -71,7 +106,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 				throw new Error(`Error: ${response.status}`);
 			}
 			const data = await response.json();
-			let airtableRecordId = data.id;
+			setAirtableRecordId(data.id);
 			setRecipe(recipe);
 			console.log(airtableRecordId)
 			
