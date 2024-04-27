@@ -27,7 +27,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		fetchRecipeDetails();
 	}, [id]);
 
-	// Fetch Airtable data to get recipe's Airtable id
+	// Fetch Airtable data to get recipe's Airtable id for delete record
 	useEffect(() => {
 
 		async function fetchAirtableData() {
@@ -140,14 +140,17 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 	}
 
 	return (
-		<>
-			<div className="container mt-5">
-				<div className="row">
-					<div className="col-12">
-						<h2 className="text-center mt-4 mb-4">{recipe.title}</h2>
-					</div>
-				</div>
-				<div className="row">
+		<div className='text-white' style={{
+			backgroundImage: `url('https://github.com/WAILENGL/whattocook/blob/main/Images/OIG3.png?raw=true')`,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+			height: '100%',
+			padding: '2.5rem'
+			
+		  }}>
+			<div className="container">
+				<h2 className="text-center mb-5 mt-2">{recipe.title}</h2>
+									<div className="row">
 					<div className="col-md-6">
 						<img src={recipe.image} className="img-fluid" alt={recipe.title} />
 					</div>
@@ -157,14 +160,14 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 							isFavourite={isFavourite}
 							onClick={handleFavouriteClick}
 						/>
-						<h5>Ingredients:</h5>
+						<h4>Ingredients:</h4>
 						<ul>
 							{recipe.extendedIngredients.map((ingredient, index) => (
 								<li key={index}>{ingredient.original}</li>
 							))}
 						</ul>
 						<br />
-						<h5>Instructions:</h5>
+						<h4>Instructions:</h4>
 						{recipe.analyzedInstructions[0].steps.map((recipeStep, index) => (
 							<div key={index}>
 								{recipeStep.number}. {recipeStep.step}
@@ -174,6 +177,6 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 					</div>
 				</div>
 			</div>
-		</>
+			</div>
 	);
 }

@@ -33,11 +33,17 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
 
 
   return (
-    <>
-      <div className="container mt-5 fixed-top">
+    <div style={{
+			backgroundImage: `url('https://github.com/WAILENGL/whattocook/blob/main/Images/OIG3.png?raw=true')`,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+			height: '100vh',
+			padding: '5rem'
+		  }}>
+      <div className="container mt-5 fixed-top" >
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center mt-4 mb-4">Your Favourite Recipes</h2>
+            <h2 className="text-center mt-5 mb-4 text-white">Your Favourite Recipes</h2>
           </div>
         </div>
         <div className="row">
@@ -53,6 +59,6 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
        ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
