@@ -27,6 +27,8 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
       } catch (error) {
         console.log(error.message);
       }
+    
+
       }
     fetchFavourites();
   }, []);
@@ -49,8 +51,8 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
         <div className="row">
           {favourites.map((recipe) => (
             <div key={recipe.id} className="col-md-4">
-              <Link to={`/recipe/${recipe.fields.recipeid}`} className="card mb-4">
-                <img src={recipe.fields.image} className="card-img-top" alt={recipe.fields.title} />         
+              <Link to={`/recipe/${recipe.fields? recipe.fields.recipeid : ''}`} className="card mb-4">
+              <img src={recipe.fields? recipe.fields.image : ''} className="card-img-top" alt={recipe.fields.title} />         
                       <div className="card-body">
                <h5 className="card-title" style={{ height: '35px', textAlign: "center"}} >{recipe.fields.title}</h5>
               </div>
