@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 
 export default function RecipeList({ recipes }) {
 	return (
-		<div style={{
-			backgroundImage: `url('https://github.com/WAILENGL/whattocook/blob/main/Images/OIG3.png?raw=true')`,
-			backgroundSize: 'cover',
-			backgroundPosition: 'center',
-			height: '100vh',
-			padding: '5rem'
-		  }}>
-			<div className="container mt-5">
+		<div
+			style={{
+				backgroundImage: `url('https://github.com/WAILENGL/whattocook/blob/main/Images/OIG3.png?raw=true')`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				height: '100%',
+				padding: '3rem',
+			}}
+		>
+			<div className="container">
 				<div className="row">
 					<div className="col-12">
-						<h2 className="text-center mt-4 mb-4 text-white">Here's What You Can Cook!</h2>
+						<h1 className="text-center mb-4 text-white">
+							Here's What You Can Cook
+						</h1>
 					</div>
 				</div>
 				<div className="row">
@@ -39,6 +43,6 @@ export default function RecipeList({ recipes }) {
 					))}
 				</div>
 			</div>
-      </div>
+		</div>
 	);
 }
