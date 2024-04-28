@@ -93,7 +93,7 @@ export default function IngredientForm({ setRecipes }) {
 				height: '100vh',
 				padding: '5rem',
 			}}
-		>
+		><h2 className='text-center text-white mb-4'>What's In Your Kitchen?</h2>
 			<div className="container flex-column justify-content-center align-items-center">
 				<form onSubmit={handleSubmit} className="text-center">
 					<div className="row justify-content-center">
