@@ -14,7 +14,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		async function fetchRecipeDetails() {
 			try {
 				const response = await fetch(
-					`https://api.spoonacular.com/recipes/${id}/information?apiKey=7134c70d9ec34d258b3d03fe6708ccbb`
+					`https://api.spoonacular.com/recipes/${id}/information?apiKey=b662b7888b3642d2ad673e21b66ea7cd`
 				);
 				if (!response.ok) {
 					throw new Error(`Error: ${response.status}`);
@@ -151,22 +151,23 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 			backgroundImage: `url('https://github.com/WAILENGL/whattocook/blob/main/Images/OIG3.png?raw=true')`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
-			height: '100%',
 			padding: '2.5rem'
 			
 		  }}>
-			<div className="container">
-				<h2 className="text-center mb-5 mt-2">{recipe.title}</h2>
+			<div className="container h-100" style={{ minHeight: '100%' }}>
+				<h2 className="text-center mb-4">{recipe.title}</h2>
 									<div className="row">
 					<div className="col-md-6">
 						<img src={recipe.image} className="img-fluid" alt={recipe.title} />
-					</div>
-					<div className="col-md-6">
+						<p className="d-flex justify-content-center mt-4">
 						<FavouriteButton
 							recipe={recipe}
 							isFavourite={isFavourite}
 							onClick={handleFavouriteClick}
-						/>
+						/></p>
+					</div>
+					<div className="col-md-6">
+					
 						<h4>Ingredients:</h4>
 						<ul>
 							{recipe.extendedIngredients.map((ingredient, index) => (

@@ -55,8 +55,9 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
         {loading ? (
           <div className="text-center mt-5 text-white">
             <Spinner animation="border" role="status">
-      <span className='visually-hidden'>Loading...</span>
+      <span className='visually-hidden'>getting your favourite recipes...</span>
     </Spinner>
+    <p>getting your favourite recipes...</p>
             </div>
          
         ) :(
@@ -75,7 +76,7 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
 								<div className="card-body">
 									<h5
 										className="card-title"
-										style={{ height: '35px', textAlign: 'center' }}
+										style={{ height: '45px', textAlign: 'center' }}
 									>
 										{recipe.fields && recipe.fields.title}
 									</h5>
