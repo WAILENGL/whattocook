@@ -11,15 +11,16 @@ export default function App() {
   const [recipes, setRecipes] = useState([]);
   const [favourites, setFavourites] = useState([]);
   
+  
 	return (
 		<>
 			<NavBar />
 
 			<Routes>
       <Route path="/" element={<IngredientForm setRecipes={setRecipes} />} />
-      <Route path="/recipelist" element={<RecipeList recipes={recipes} />} />
+      <Route path="/recipelist" element={<RecipeList recipes={recipes}/>} />
 	  <Route path="/recipe/:id" element={<RecipeDetails favourites={favourites} setFavourites={setFavourites}/>} />
-	  <Route path="/favourites" element={<FavouriteRecipes favourites={favourites} setFavourites={setFavourites} />} /> 
+	  <Route path="/favourites" element={<FavouriteRecipes favourites={favourites} setFavourites={setFavourites}/>} /> 
 			</Routes>
     
 		</>

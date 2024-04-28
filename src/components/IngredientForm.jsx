@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function IngredientForm({ setRecipes }) {
 	const [ingredient, setIngredient] = useState('');
 	const [ingredientList, setIngredientList] = useState([]);
+	const [searching, setSearching] = useState(false);
 	const goToResults = useNavigate();
 	const validWord = /^[a-zA-Z\s]/;
 
@@ -19,7 +21,7 @@ export default function IngredientForm({ setRecipes }) {
 	// this allows user to input ingredients from kitchen one by one, look into local storage to keep ingredient list
 	function handleSubmit(event) {
 		event.preventDefault();
-		if (validWord.test(ingredient)) {
+				if (validWord.test(ingredient)) {
 			const lowercaseIngredient = ingredient.toLowerCase();
 			// this checks for whether the input matches any of the ingredients already on the list and returns "false" if it does
 			if (
@@ -50,6 +52,8 @@ export default function IngredientForm({ setRecipes }) {
 	async function handleSearch() {
 		let ingredientString = ingredientList.join(',+');
 		try {
+			setSearching(true);
+		
 			const response = await fetch(
 				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=212906df28ff4c0dbb3e9b2dd915adcd&ingredients=${ingredientString}&number=9`
 			);
@@ -63,7 +67,23 @@ export default function IngredientForm({ setRecipes }) {
 		} catch (error) {
 			console.error('There was a problem with the search:', error);
 		}
-	}
+		finally {
+				setSearching(false); // Set searching state back to false after search completes
+			}
+        }
+	
+
+	if (searching) {
+        return (
+            <div className="text-center mt-5 text-black">
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+				<p>Searching...</p>
+            </div>
+        );
+    }
+
 	return (
 		<div
 			style={{

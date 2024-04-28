@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function FavouriteRecipes({ favourites, setFavourites }) {
+  const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		async function fetchFavourites() {
 			try {
@@ -22,9 +25,11 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
 				const data = await response.json();
 				setFavourites(data.records);
 				console.log(data);
+        setLoading(false);
 			} catch (error) {
 				console.log(error.message);
 			}
+      
 		}
 		fetchFavourites();
 	}, []);
@@ -47,6 +52,14 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
 						</h2>
 					</div>
 				</div>
+        {loading ? (
+          <div className="text-center mt-5 text-white">
+            <Spinner animation="border" role="status">
+      <span className='visually-hidden'>Loading...</span>
+    </Spinner>
+            </div>
+         
+        ) :(
 				<div className="row">
 					{favourites.map((recipe) => (
 						<div key={recipe.id} className="col-md-4">
@@ -71,6 +84,7 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
 						</div>
 					))}
 				</div>
+         )}
 			</div>
 		</div>
 	);

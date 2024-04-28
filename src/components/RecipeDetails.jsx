@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FavouriteButton from './FavouriteButton';
 import { useParams } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function RecipeDetails({ favourites, setFavourites }) {
 	const [recipe, setRecipe] = useState(null);
@@ -135,8 +136,14 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		}
 	}
 
-	if (!recipe) {
-		return <div>Loading...</div>;
+	if (!recipe) {return (
+		<div className="text-center mt-5 text-black">
+            <Spinner animation="border" role="status">
+      <span className='visually-hidden'>Loading...</span>;
+	  </Spinner>
+	  <p>loading recipe...</p>
+	  </div>
+	  )
 	}
 
 	return (
