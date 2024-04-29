@@ -7,6 +7,7 @@ import RecipeDetails from './components/RecipeDetails';
 import FavouriteRecipes from './components/FavouriteRecipes';
 import NavBar from './components/Navbar';
 
+
 export default function App() {
   const [recipes, setRecipes] = useState([]);
   const [favourites, setFavourites] = useState([]);

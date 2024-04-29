@@ -38,7 +38,6 @@ export default function RecipeList({ recipes }) {
 									>
 										{recipe.title}
 									</h5>
-									<p className="card-text">{recipe.summary}</p>
 								</div>
 							</Link>
 						</div>

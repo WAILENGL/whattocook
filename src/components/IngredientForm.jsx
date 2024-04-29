@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import { API_KEY } from '../key';
 
 export default function IngredientForm({ setRecipes }) {
 	const [ingredient, setIngredient] = useState('');
@@ -55,7 +56,7 @@ export default function IngredientForm({ setRecipes }) {
 			setSearching(true);
 		
 			const response = await fetch(
-				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b662b7888b3642d2ad673e21b66ea7cd&ingredients=${ingredientString}&number=6`
+				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=${ingredientString}&number=6`
 			);
 			if (!response.ok) {
 				throw new Error(`Error: ${response.status}`);

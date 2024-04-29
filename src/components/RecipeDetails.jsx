@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FavouriteButton from './FavouriteButton';
 import { useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import { API_KEY } from '../key';
 
 export default function RecipeDetails({ favourites, setFavourites }) {
 	const [recipe, setRecipe] = useState(null);
@@ -14,7 +15,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		async function fetchRecipeDetails() {
 			try {
 				const response = await fetch(
-					`https://api.spoonacular.com/recipes/${id}/information?apiKey=b662b7888b3642d2ad673e21b66ea7cd`
+					`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
 				);
 				if (!response.ok) {
 					throw new Error(`Error: ${response.status}`);
@@ -156,32 +157,51 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 		  }}>
 			<div className="container h-100" style={{ minHeight: '100%' }}>
 				<h2 className="text-center mb-4">{recipe.title}</h2>
-									<div className="row">
-					<div className="col-md-6">
+					<div className="row">
+					<div className="col-md-12 d-flex align-items-center">
+					<div className="w-100 text-center">
 						<img src={recipe.image} className="img-fluid" alt={recipe.title} />
-						<p className="d-flex justify-content-center mt-4">
+					
+						 </div>
+						 </div>
+						
+						  <div className="card border-primary mt-4 mb-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+                <div className="card-header d-flex justify-content-between align-items-center">
+				<span className=" fs-4 mb-0 me-auto">Recipe Summary</span>
+				<div className="p-0">
+        <p className="m-0">
 						<FavouriteButton
 							recipe={recipe}
 							isFavourite={isFavourite}
 							onClick={handleFavouriteClick}
 						/></p>
-					</div>
+				</div>
+				</div>
+                <div className="card-body">
+                    <p className="card-text text-justify" dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
+                
+            </div>
+			</div>
+			<div className="row">
 					<div className="col-md-6">
 					
-						<h4>Ingredients:</h4>
-						<ul>
+						<h4 style={{ fontSize: '20px', fontWeight: 'bold' }}>Ingredients:</h4>
+						<ul style={{ fontSize: '18px'}}>
 							{recipe.extendedIngredients.map((ingredient, index) => (
 								<li key={index}>{ingredient.original}</li>
 							))}
 						</ul>
-						<br />
-						<h4>Instructions:</h4>
+						</div>
+						<div className="col-md-6 text-justify">
+						
+						<h4 style={{ fontSize: '20px', fontWeight: 'bold' }}>Instructions:</h4>
 						{recipe.analyzedInstructions[0].steps.map((recipeStep, index) => (
-							<div key={index}>
+							<div key={index} style={{ fontSize: '18px'}}>
 								{recipeStep.number}. {recipeStep.step}
 								<p></p>
 							</div>
 						))}
+						</div>
 					</div>
 				</div>
 			</div>
