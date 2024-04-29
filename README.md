@@ -41,19 +41,13 @@ You are required to use fetch for every RESTful API that you call. Under <b><i>N
 
 ### Languages and Technologies Used
 
-For this project, I used the following languages:
+For this project, I used the following:
 
 ```
 - React
 - HTML
 - CSS
 - Javascript
-
-```
-
-I used the following technologies:
-
-```
 - Spoonacular APIs
 - Airtable
 - Github
