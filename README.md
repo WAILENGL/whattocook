@@ -1,8 +1,18 @@
-# Personal Portfolio
+# What To Cook Today?
 
 ## Project Brief
 
 Build a full-stack application from the ground up.
+
+## App Description
+
+What To Cook Today? Is an app which searches for recipes based on ingredients the user has in their kitchen. Users can save their favourite recipes for use later.
+
+You can try it [here](https://whattocooktoday.vercel.app/)
+
+![Landing Page](https://github.com/WAILENGL/whattocook/blob/main/Images/landing.png?raw=true)
+![Recipe Details Page](https://github.com/WAILENGL/whattocook/blob/main/Images/favourites.png?raw=true)
+![Favourites Page](https://github.com/WAILENGL/whattocook/blob/main/Images/recipedetails.png?raw=true)
 
 ## Technical Requirements
 
@@ -29,11 +39,7 @@ Have at least 1 CUD (**C**reates, **U**pdates, **D**elete) implementation using 
 
 You are required to use fetch for every RESTful API that you call. Under <b><i>NO</i></b> circumstances are you allowed to use Airtable or any other online database's SDK/API for doing CRUD.
 
-## Description
-
-An app which searches for recipes based on ingredients the user has in their kitchen.
-
-### Languages and Technology Used
+### Languages and Technologies Used
 
 For this project, I used the following languages:
 
@@ -57,9 +63,11 @@ I used the following technologies:
 
 ```
 
-### Wireframes
+### Planning
 
-For my wireframe, I used Figma to create the skeleton of what the site should look like:
+I used Figma for wireframing and a Trello board to track my progress milestones.
+
+Here is the skeleton of what the site should look like during the planning stage, as well as the user navigation flow:
 
 [Figma Wireframe and planning](https://www.figma.com/file/3cH5Zltyij5tYB1Wu3nf6G/What-To-Cook-Today%3F?type=whiteboard&node-id=0-1&t=PwaOSbIUf4A0PDng-0)
 
@@ -146,6 +154,8 @@ During coding, aside from helpful classmates, Google and documentation like the 
 ### Unsolved problems
 
 Currently the search gets recipes that utilize the maximum number of ingredients entered, but not recipes that utilize only the ingredients entered. Upon researching further, it appears that the "strict" parameter needed to ensure that the recipes contain only the exact ingredients input is only available to paid users. I am looking into whether any client-side solutions are possible, such as using a filter method to filter out recipes that contain extra ingredients.
+
+I am also looking into adding a notes section under the details of favourited recipes so users can make their own notes on it and any modifications they made.
 
 ## 3rd Party APIs Used
 
