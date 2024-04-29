@@ -159,7 +159,14 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 				padding: '2.5rem',
 			}}
 		>
-			<div className="container h-100" style={{ minHeight: '100%' }}>
+			<div
+				className="container h-100"
+				style={{
+					minHeight: '100%',
+					backgroundColor: 'rgba(0, 0, 0, 0.5)',
+					borderRadius: '15px',
+				}}
+			>
 				<h2 className="text-center mb-4">{recipe.title}</h2>
 				<div className="row overflow-hidden">
 					<div className="col-md-12 d-flex align-items-center">
@@ -196,12 +203,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 						</div>
 					</div>
 					<div className="row px-0">
-						<div
-							className="col-md-4 card-body"
-							style={{
-								backgroundColor: 'rgba(0, 0, 0, 0.4)',
-							}}
-						>
+						<div className="col-md-4 card-body">
 							<h4
 								className="mt-4 offset-md-1"
 								style={{ fontSize: '20px', fontWeight: 'bold' }}
@@ -216,12 +218,7 @@ export default function RecipeDetails({ favourites, setFavourites }) {
 								))}
 							</ul>
 						</div>
-						<div
-							className="col-md-8 ml-4"
-							style={{
-								backgroundColor: 'rgba(0, 0, 0, 0.4)',
-							}}
-						>
+						<div className="col-md-8 ml-4">
 							<h4
 								className="mt-4 offset-md-1"
 								style={{ fontSize: '20px', fontWeight: 'bold' }}
