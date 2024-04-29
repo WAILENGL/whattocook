@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default function RecipeList({ recipes }) {
 
+	  if (!Array.isArray(recipes)) {
+    return <p>No recipes found.</p>;
+  }
+
+
 	return (
 		<div
 			style={{

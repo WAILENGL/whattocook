@@ -63,10 +63,10 @@ export default function FavouriteRecipes({ favourites, setFavourites }) {
         ) :(
 				<div className="row">
 					{favourites.map((recipe) => (
-						<div key={recipe.id} className="col-md-4">
+						<div key={recipe.id} className="col-md-4" >
 							<Link
 								to={`/recipe/${recipe.fields ? recipe.fields.recipeid : ''}`}
-								className="card mb-4"
+								className="card mb-4" 
 							>
 								<img
 									src={recipe.fields ? recipe.fields.image : ''}

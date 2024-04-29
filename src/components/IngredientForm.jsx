@@ -56,7 +56,7 @@ export default function IngredientForm({ setRecipes }) {
 			setSearching(true);
 		
 			const response = await fetch(
-				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=${ingredientString}&number=6`
+				`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=${ingredientString}&fillingredients=false&number=6`
 			);
 			if (!response.ok) {
 				throw new Error(`Error: ${response.status}`);
