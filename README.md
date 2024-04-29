@@ -141,7 +141,7 @@ Creating the wireframe helped me visualize how my site would work, and allowed m
 
 Before putting in a feature or function that might affect other parts of the site, I'd back up the existing component files in another folder, and restore the code if things went awry. Frequent commits to Github only with a working site also helped with ensuring there's always a back up.
 
-During coding, Google and documentation like the MDN were my best friends. AI was also helpful with helping me find formatting errors, explaining error codes/types and how solutions found on Stack Overflow worked if I didn't fully understand them.
+During coding, aside from helpful classmates, Google and documentation like the MDN were my best friends.
 
 ### Unsolved problems
 
@@ -155,7 +155,7 @@ Currently the search gets recipes that utilize the maximum number of ingredients
 
 ## Acknowledgments
 
-I would like to thank Simon and Faith for their advice and guidance throughout this project. This project has reinforced my knowledge of React and helped me understand better how to plan out and structure a website.
+I would like to thank Simon and Faith for their advice and guidance throughout this project. Also my SEI50 classmates who helped clarify and assisted me with issues I encountered. This project has reinforced my knowledge of React and helped me understand better how to plan out and structure a website.
 
 ---
 
