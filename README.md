@@ -6,12 +6,12 @@ Build a full-stack application from the ground up.
 
 ## Technical Requirements
 
-☐ **Use 3rd party API and Airtable**
+**Use 3rd party API and Airtable**
 
 - Calling an API and displaying the data for the user. You may use any API of your choosing or [Find an available API here](https://github.com/public-apis/public-apis)
 - You must use Airtable (but **NOT** the [airtable client](https://github.com/Airtable/airtable.js)) to store data.
 
-☐ **Use React framework** to build your application with _at least_
+**Use React framework** to build your application with _at least_
 
 - 5 components
 - 4 props
@@ -19,11 +19,11 @@ Build a full-stack application from the ground up.
 - 2 react router routes
 - 1 lifting state, which is used to implement CRUD on the client side
 
-☐ Be styled such that the app looks and feels similar to apps we use on a daily basis - in other words, **it should have a consistent and polished user interface.**
+Be styled such that the app looks and feels similar to apps we use on a daily basis - in other words, **it should have a consistent and polished user interface.**
 
-☐ Be **deployed online** (Vercel).
+Be **deployed online** (Vercel).
 
-☐ Have at least 1 CUD (**C**reates, **U**pdates, **D**elete) implementation using Airtable.
+Have at least 1 CUD (**C**reates, **U**pdates, **D**elete) implementation using Airtable.
 
 # IMPORTANT
 
@@ -61,7 +61,7 @@ I used the following technologies:
 
 For my wireframe, I used Figma to create the skeleton of what the site should look like:
 
-![Wireframe](https://www.figma.com/file/3cH5Zltyij5tYB1Wu3nf6G/What-To-Cook-Today%3F?type=whiteboard&node-id=0-1&t=PwaOSbIUf4A0PDng-0)
+[Figma Wireframe and planning](https://www.figma.com/file/3cH5Zltyij5tYB1Wu3nf6G/What-To-Cook-Today%3F?type=whiteboard&node-id=0-1&t=PwaOSbIUf4A0PDng-0)
 
 ### User Story
 
