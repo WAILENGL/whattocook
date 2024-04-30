@@ -165,6 +165,8 @@ I am also looking into adding a notes section under the details of favourited re
   - Find by Ingredients
   - Get Recipe Information
 
+![Screenshot of Airtable Data used](https://github.com/WAILENGL/whattocook/blob/main/Images/Airtable.png?raw=true)
+
 ---
 
 ## Acknowledgments
