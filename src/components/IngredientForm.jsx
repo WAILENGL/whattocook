@@ -8,7 +8,7 @@ export default function IngredientForm({ setRecipes }) {
 	const [ingredientList, setIngredientList] = useState([]);
 	const [searching, setSearching] = useState(false);
 	const goToResults = useNavigate();
-	const validWord = /^[a-zA-Z\s]/;
+	const validWord = /\b[a-zA-Z\s]+\b/;
 
 	useEffect(() => {
 		const storedIngredients = JSON.parse(
