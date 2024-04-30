@@ -153,7 +153,7 @@ One of the major challenges I faced in coding was figuring out how to remove rec
 
 Overcoming these challenges helped me develop my problem solving skills in coding and a better appreciation for coding with others as working with classmates to figure out things like working with Airtable really sped up the learning process for me, despite us all working on different projects.
 
-### Unsolved problems
+### Future Developments
 
 Currently the search gets recipes that utilize the maximum number of ingredients entered, but not recipes that utilize only the ingredients entered. Upon researching further, it appears that the "strict" parameter needed to ensure that the recipes contain only the exact ingredients input is only available to paid users. I am looking into whether any client-side solutions are possible, such as using a filter method to filter out recipes that contain extra ingredients.
 
