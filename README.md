@@ -145,6 +145,14 @@ Before putting in a feature or function that might affect other parts of the sit
 
 During coding, aside from helpful classmates, Google and documentation like the MDN were my best friends.
 
+### Challenges & Takeaways
+
+In general, having to structure and code my first project after 2 weeks of learning React was a challenge. Unlike the first project where I could refer to others' work to see how they made the same parts of the game work, this time there were no similar references. Despite having a code-along project in class to refer to, structuring the project and implementing concepts like lifting state still took time for me to figure out for my own project.
+
+One of the major challenges I faced in coding was figuring out how to remove recipes from favourites as I had initially assumed it would be a simple matter of removing the recipeid. That proved not to be the case and I had to work out that there was an Airtable ID for each record that my table didn't show, and use that to delete the record.
+
+Overcoming these challenges helped me develop my problem solving skills in coding and a better appreciation for coding with others as working with classmates to figure out things like working with Airtable really sped up the learning process for me, despite us all working on different projects.
+
 ### Unsolved problems
 
 Currently the search gets recipes that utilize the maximum number of ingredients entered, but not recipes that utilize only the ingredients entered. Upon researching further, it appears that the "strict" parameter needed to ensure that the recipes contain only the exact ingredients input is only available to paid users. I am looking into whether any client-side solutions are possible, such as using a filter method to filter out recipes that contain extra ingredients.
@@ -154,6 +162,8 @@ I am also looking into adding a notes section under the details of favourited re
 ## 3rd Party APIs Used
 
 - [Spoonacular API](https://spoonacular.com/food-api/)
+  - Find by Ingredients
+  - Get Recipe Information
 
 ---
 
